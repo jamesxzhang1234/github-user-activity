@@ -50,13 +50,13 @@ function consoleResponse(events) {
     for (const event of events) {
         switch (event.type) {
             case "PushEvent":
-                console.log(`Pushed ${event.number} commit(s) to ${event.url.substring(29)}`);
+                console.log(`- Pushed ${event.number} commit(s) to ${event.url.substring(29)}`);
                 break;
             case "CreateEvent":
-                console.log(`Created ${event.number} repo(s) in ${event.url.substring(29)}`);
+                console.log(`- Created ${event.number} repo(s) in ${event.url.substring(29)}`);
                 break;
             default:
-                console.log(`${event.type}`);
+                console.log(`- ${event.type} ${event.number} time(s) in $${event.url.substring(29)}`);
                 break;
         }
     }

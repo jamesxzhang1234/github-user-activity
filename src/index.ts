@@ -81,7 +81,6 @@ function formatResponse(events : GithubResponse[]) : formattedResponse[] {
     
     )
      
-}
 
 function isKnownEventType(type : string) : type is knownEventType {
 
@@ -95,9 +94,9 @@ function consoleResponse(events : formattedResponse[]) {
 
         switch(event.type) {
 
-            case "PushEvent" : console.log(`Pushed ${event.number} commit(s) to ${event.url.substring(29)}`); break; 
-            case "CreateEvent" : console.log(`Created ${event.number} repo(s) in ${event.url.substring(29)}`); break;
-            default : console.log(`${event.type}`); break;
+            case "PushEvent" : console.log(`- Pushed ${event.number} commit(s) to ${event.url.substring(29)}`); break; 
+            case "CreateEvent" : console.log(`- Created ${event.number} repo(s) in ${event.url.substring(29)}`); break;
+            default : console.log(`- ${event.type} ${event.number} time(s) in $${event.url.substring(29)}`); break;
     
         }
     
