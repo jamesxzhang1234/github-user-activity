@@ -81,6 +81,7 @@ function formatResponse(events : GithubResponse[]) : formattedResponse[] {
     
     )
      
+}
 
 function isKnownEventType(type : string) : type is knownEventType {
 
